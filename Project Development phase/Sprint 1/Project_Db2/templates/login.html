@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+
+{%block head%}
+
+<form action="{{url_for('login')}}" method="POST">
+        {%with messages = get_flashed_messages(with_categories=true)%}
+            {%if messages%}
+                {%for category,message in messages%}
+                    <div class="alert alert-{{category}}">{{message}}</div>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+    <label for="E-mail">Enter your E-mail id:</label><br>
+    <input type="email" id="mailid" name="mailid" class="form-control"><br>
+    <label for="pswd">Password:</label><br>
+    <input type="password" id="pswd" name="pswd"class="form-control"><br><br>
+    <input type="submit" value="Login" class="btn btn-success btn-block">
+    <a href="{{url_for('registration')}}" class="btn btn-primary btn-block"> Register </a>
+</form>
+
+{%endblock%}
