@@ -1,0 +1,143 @@
+
+
+
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <p>Hello </p>
+    <hr>
+    <a href="{{url_for('logout')}}" class="btn btn-primary btn">Logout</a>
+
+</body>
+
+</html> -->
+
+{%extends "base.html"%}
+
+{%block head%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashstyle.css')}}">
+   
+    <!-- <link rel="stylesheet" href="Styles.css"> -->
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "a97c462c-ad3d-44dd-b2af-1fa5c113384e", // The ID of this integration.
+        region: "jp-tok", // The region your integration is hosted in.
+        serviceInstanceID: "8984d694-4acd-415b-8d00-a4936a93261f", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</head>
+<body>
+    <p >Hello {{session["mailid"]}}!!
+      
+   
+    <a href="{{url_for('logout')}}" style="float:right; " >Logout</a>
+  </p><h1>Smart Fashion Recommender Application</h1><br>
+    <hr>
+    <b>
+    <h1>PRODUCTS</h1></b>
+    {%for row in products%}
+    <main class="container">
+      <!-- Product Description -->
+      <div class="responsive">
+        <div class="gallery">
+          <div class="product-description">
+            <!-- <img src= "{{ url_for('static', filename='cat2.jpeg', width="12", height="25")}}" > -->
+            <img src='https://123sfra.s3.jp-tok.cloud-object-storage.appdomain.cloud/static/{{row["PIMAGE"]}}'', width="12", height="25" >
+            <h2>{{row["PNAME"]}}</h2>
+            <!-- Product Pricing -->
+            <div class="product-price">
+              <span>₹{{row["PPRICE"]}}</span>
+              <a href="{{url_for('checkout')}}" class="cart-btn">Add to cart</a>
+            </div><br><br>
+          </div>
+        </div>
+      </div>  
+    </main>  
+    {%endfor%}
+
+    
+    <h3>MENS SECTION</h3>
+    {%for row in MEN%}
+    <main class="container">
+      <!-- Product Description -->
+      <div class="responsive">
+        <div class="gallery">
+          <div class="product-description">
+            <!-- <img src= "{{ url_for('static', filename='cat2.jpeg', width="12", height="25")}}" > -->
+            <img src='https://123sfra.s3.jp-tok.cloud-object-storage.appdomain.cloud/static/{{row["PIMAGE"]}}'', width="12", height="25" >
+            <h2>{{row["PNAME"]}}</h2>
+            <!-- Product Pricing -->
+            <div class="product-price">
+              <span>₹{{row["PPRICE"]}}</span>
+              <a href="{{url_for('checkout')}}" class="cart-btn">Add to cart</a>
+            </div><br><br>
+          </div>
+        </div>
+      </div>  
+    </main>  
+    {%endfor%}
+
+    <h3>WOMENS SECTION</h3></b>
+
+    {%for row in WOMEN%}
+    <main class="container">
+      <!-- Product Description -->
+      <div class="responsive">
+        <div class="gallery">
+          <div class="product-description">
+            <!-- <img src= "{{ url_for('static', filename='cat2.jpeg', width="12", height="25")}}" > -->
+            <img src='https://123sfra.s3.jp-tok.cloud-object-storage.appdomain.cloud/static/{{row["PIMAGE"]}}'', width="12", height="25" >
+            <h2>{{row["PNAME"]}}</h2>
+            <!-- Product Pricing -->
+            <div class="product-price">
+              <span>₹{{row["PPRICE"]}}</span>
+              <a href="{{url_for('checkout')}}" class="cart-btn">Add to cart</a>
+            </div><br><br>
+          </div>
+        </div>
+      </div>  
+    </main>  
+    {%endfor%}
+
+    <h3>KIDS SECTION</h3></b>
+
+    {%for row in KIDS%}
+    <main class="container">
+      <!-- Product Description -->
+      <div class="responsive">
+        <div class="gallery">
+          <div class="product-description">
+            <!-- <img src= "{{ url_for('static', filename='cat2.jpeg', width="12", height="25")}}" > -->
+            <img src='https://123sfra.s3.jp-tok.cloud-object-storage.appdomain.cloud/static/{{row["PIMAGE"]}}'', width="12", height="25" >
+            <h2>{{row["PNAME"]}}</h2>
+            <!-- Product Pricing -->
+            <div class="product-price">
+              <span>₹{{row["PPRICE"]}}</span>
+              <a href="{{url_for('checkout')}}" class="cart-btn">Add to cart</a>
+            </div><br><br>
+          </div>
+        </div>
+      </div>  
+    </main>  
+    {%endfor%}
+</body>
+</html>
+{%endblock%}
