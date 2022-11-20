@@ -1,0 +1,156 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #344a72;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    
+  }
+  h2,h1{
+    color:#E1E8EE;
+  }
+
+  img {
+    float: left;
+    width:  160px;
+    height: 250px;
+    object-fit: cover;
+    padding:30px;
+}
+   
+  .container {
+    max-width: 1300px;
+    margin:  auto;
+    padding: 20px;
+    display: flex;
+    float:left;
+  }
+  
+  /* Product Description */
+  .product-description {
+    border-bottom: 1px solid #344a72;
+    margin-bottom: 20px;
+    float:left;
+  }
+  .product-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    float:left;
+  }
+  .product-description h1h2 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #edf3f8;
+    letter-spacing: -2px;
+    float:left;
+  }
+  .product-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939E;
+    line-height: 24px;
+    float:left;
+  }
+  .product-description1 {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+    float:left;
+  }
+  .product-description1 span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    float:left;
+  }
+  .product-description1 h1h2 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #f9fcff;
+    letter-spacing: -2px;
+    float:left;
+  }
+  .product-description1 p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #f5f8fa;
+    line-height: 24px;
+    float:left;
+  }
+  
+  
+  /* Cable Configuration */
+  .cable-choose {
+    margin-bottom: 20px;
+  }
+   
+  .cable-choose button {
+    border: 2px solid #859cb0;
+    border-radius: 6px;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: #f9fafb;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .5s;
+  }
+   
+  
+  /* Product Price */
+  .product-price {
+    display: flex;
+    align-items: left;
+  }
+   
+  .product-price span {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fafbfd;
+    margin-right: 20px;
+  }
+   
+  .cart-btn {
+    display: inline-block;
+    background-color: #7DC855;
+    border-radius: 20px;
+    font-size: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 30px;
+    transition: all .5s;
+  }
+  .cart-btn:hover {
+    background-color: #64af3d;
+  }
+  /* Responsive */
+@media (max-width: 940px) {
+    .container {
+      flex-direction: column;
+      margin-top: 70px;
+    }
+   
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+   
+    .left-column img {
+      width: 300px;
+      right: 0;
+      top: -65px;
+      left: initial;
+    }
+  }
+   
+  @media (max-width: 535px) {
+    .left-column img {
+      width: 220px;
+      top: -85px;
+    }
+  }
